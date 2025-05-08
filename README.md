@@ -38,6 +38,31 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
 | **Bitcoin Node** | Umbrel: Ensure `bitcoin-knots_bitcoind_1` container runs (`docker ps`). Native: `bitcoind` with `rpcuser`/`rpcpassword` in `~/.bitcoin/bitcoin.conf`. Test: `bitcoin-cli getblockcount`. |
 | **Telegram Bot** (Optional) | Create a bot via [BotFather](https://t.me/BotFather) for `TELEGRAM_BOT_TOKEN`. Get `TELEGRAM_CHAT_ID` by messaging the bot. |
 
+
+## Telegram Setup
+
+The script sends reports to a Telegram chat. Follow these steps to set up your Telegram bot and obtain the necessary credentials.
+
+1. **Create a Telegram Bot**:
+   - Open Telegram and message `@BotFather`.
+   - Send `/start`, then `/newbot`.
+   - Follow prompts to name your bot (e.g., `BitaxeMonitorBot`).
+   - Copy the **Bot Token** (e.g., `123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ`).
+
+2. **Get Your Chat ID**:
+   - Message your bot (e.g., `/start`).
+   - Forward a message from your bot to `@GetIDsBot` or use an AI assistant with this prompt:
+     ```
+     I need help getting my Telegram Chat ID for a bot. I’ve created a bot with BotFather and sent it a message. How do I find the Chat ID?
+     ```
+   - The AI or `@GetIDsBot` will provide your **Chat ID** (e.g., `123456789`).
+
+3. **Test Telegram Connectivity**:
+   - Replace `YOUR_BOT_TOKEN` and `YOUR_CHAT_ID` in the command below and run it on your node:
+     ```bash
+     curl -s -X POST "https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage" -d chat_id="YOUR_CHAT_ID" -d text="Test from my node"
+     ```
+   - Check your Telegram chat for the test message. If it fails, verify your token, chat ID, and network connectivity.
 ---
 
 ## 🚀 Installation
