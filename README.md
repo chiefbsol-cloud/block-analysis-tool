@@ -51,3 +51,7 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
  ```bash
 mkdir -p ~/logs/block_delay
 chmod 755 ~/logs/block_delay
+
+3. ** Set Permissions**:
+ ```bash
+chmod +x block_delay.sh get_miner.sh
