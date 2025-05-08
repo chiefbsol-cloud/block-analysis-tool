@@ -54,6 +54,21 @@ mkdir -p ~/logs/block_delay
 
 3. **Set File Permissions to Executable**:
 ```bash
-Store block_delay.sh and get_miner.sh in root of Umbrel
 chmod +x block_delay.sh
 chmod +x get_miner.sh
+```
+4. **Configure Environment**:
+```bash
+Edit block_delay.sh:
+NUM_BLOCKS: Blocks to analyze (default: 5, recommended: 5–100).
+
+TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID: For notifications.
+
+ATTACH_*_LOG: Set to YES to attach logs to Telegram.
+
+RECYCLE_LOGS_HOURS: Log retention (default: 336 hours).
+
+For Bitcoin Core Users (Untested), update both files:
+Replace docker exec bitcoin-knots_bitcoind_1 bitcoin-cli with your container name or bitcoin-cli.
+```
+
