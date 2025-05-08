@@ -96,7 +96,7 @@ RECYCLE_LOGS_HOURS: Log retention (default: 336 hours).
 For Bitcoin Core Users (Untested), update both files:
 Replace docker exec bitcoin-knots_bitcoind_1 bitcoin-cli with your container name or bitcoin-cli.
 ```
-5. ** Test the Scripts **
+5. ** Test the Scripts **:
 ```bash
 Test get_miner.sh
 ./get_miner.sh 895802
@@ -114,7 +114,7 @@ Debug.log (text)
 error.log (errors)
 ```
 
-6. ** Run as a Cronjob **
+6. ** Run as a Cronjob **:
 ```bash
 crontab -e
 Add cronjob Overnight (50 blocks, 6 AM):
@@ -123,6 +123,40 @@ Add cronjob Overnight (50 blocks, 6 AM):
 Daily (100 blocks, 10 PM):
 0 22 * * * /path/to/block_delay.sh 100
 ```
+
+7. ** Telegram Output Example **:
+📦 *Block Summary*
+Blocks: 895800-895804
+ Blocks Analysed:  5
+ Avg Header Delay: 5.2s
+ Avg Validation:  6.1s
+ Compact Blocks:  80%
+ Top Miner 1: AntPool
+ Top Miner 2: F2Pool
+──────────────
+ Fastest Block:   895802 → 2s
+ Slowest Block:   895801 → 8s
+ Negative Blocks: 0
+──────────────
+ Compact Block Stats
+ Compact:         4
+ Non-Compact:     1
+──────────────
+ Block Delay
+ ≤1s:            20%
+ <-2s:           0%
+ 2-6s:           60%
+ 7-10s:          20%
+ 11-15s:         0%
+ 16-20s:         0%
+ ≥21s:           0%
+ Time: 10:15:23 UTC
+ Date: Thu May 08 2025
+
+8. ** another **:
+
+
+
 
 
 
