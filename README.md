@@ -96,4 +96,26 @@ RECYCLE_LOGS_HOURS: Log retention (default: 336 hours).
 For Bitcoin Core Users (Untested), update both files:
 Replace docker exec bitcoin-knots_bitcoind_1 bitcoin-cli with your container name or bitcoin-cli.
 ```
+5. ** Test the Scripts **
+```bash
+Test get_miner.sh
+./get_miner.sh 895802
+
+Output:
+Miner/contact_info: AntPool
+
+Test block_delay.sh
+./block_delay.sh 5
+
+Check ~/logs/block_delay for:
+
+Propagation.log (CSV)
+Propagation.json (JSON)
+Debug.log (text)
+error.log (errors)
+```
+
+
+
+
 
