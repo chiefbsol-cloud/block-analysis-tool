@@ -46,3 +46,8 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
    ```bash
    git clone https://github.com/<your-username>/block-analysis-tool.git
    cd block-analysis-tool
+
+2. **Create Log Directory**:
+ ```bash
+mkdir -p ~/logs/block_delay
+chmod 755 ~/logs/block_delay
