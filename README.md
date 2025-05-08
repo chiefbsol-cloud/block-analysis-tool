@@ -1,50 +1,48 @@
 # block-analysis-tool
 A tool for analysing Bitcoin block propagation delays and miner information. Overview of findings are sent to Telegram with detailed CSV and JSON available. Tested on Bitcoin Knots
-The Block Analysis Tool is a Bash-based utility designed to analyze Bitcoin block propagation delays and extract miner information from block coinbase scripts. It is tailored for Bitcoin Knots running on Umbrel (Docker) but can be adapted for Bitcoin Core users. The tool generates detailed reports in CSV and JSON formats, logs debug information, and sends summaries via Telegram for real-time monitoring.
-Features
-Block Propagation Analysis (block_delay.sh):
-Measures propagation delays (mined-to-header and mined-to-validation) for a specified range of Bitcoin blocks.
+# Block Analysis Tool 📊
 
-Outputs:
-Propagation.log (CSV): Block data with timestamps, delays, compact block status, and miner names.
+![GitHub License](https://img.shields.io/github/license/<your-username>/block-analysis-tool?color=blue)
+![Language](https://img.shields.io/badge/language-Bash-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-Propagation.json (JSON): Structured block data with metadata for programmatic use.
+A Bash-based utility for analyzing **Bitcoin block propagation delays** and extracting **miner information** from coinbase scripts. Tailored for **Bitcoin Knots** on Umbrel (Docker), it supports Bitcoin Core setups and provides detailed CSV/JSON reports, debug logs, and Telegram summaries for real-time monitoring.
 
-Debug.log (text): Debug messages for troubleshooting.
+---
 
-Sends a formatted Telegram summary with key metrics (e.g., average delays, compact block percentage, top miners).
+## ✨ Features
 
-Supports cronjob scheduling for automated analysis (recommended: 50 blocks overnight, 100 blocks daily).
+### Block Propagation Analysis (`block_delay.sh`)
+- ⏱ Measures mined-to-header and mined-to-validation delays for a range of Bitcoin blocks.
+- 📄 Outputs:
+  - **Propagation.log** (CSV): Block data with timestamps, delays, compact block status, and miner names.
+  - **Propagation.json** (JSON): Structured data for programmatic use.
+  - **Debug.log** (text): Troubleshooting messages.
+- 📨 Sends Telegram summaries with metrics (e.g., average delays, compact block %, top miners).
+- ⏰ Supports cronjob scheduling (e.g., 50 blocks overnight, 100 blocks daily).
+- ♻️ Recycles logs after a configurable period (default: 336 hours).
 
-Recycles logs after a configurable period (default: 336 hours).
+### Miner Identification (`get_miner.sh`)
+- 🕵️‍♂️ Extracts miner names from block coinbase scripts using block height.
+- 🏊 Supports major mining pools (e.g., AntPool, Foundry USA Pool, MARA Pool) with manual overrides.
+- 🧹 Cleans and normalizes coinbase data for accuracy.
 
-Miner Identification (get_miner.sh):
-Extracts miner names from block coinbase scripts using block height.
+---
 
-Supports known mining pools (e.g., AntPool, Foundry USA Pool, MARA Pool) and handles manual overrides for specific blocks.
+## 🛠️ Prerequisites
 
-Cleans and normalizes coinbase data to ensure accurate miner identification.
+| Requirement | Description |
+|-------------|-------------|
+| **System** | Linux with Bash, Bitcoin Knots/Core node (Umbrel Docker recommended), internet access. |
+| **Dependencies** | `jq`, `curl`, `bc`, `awk`, `xxd` (Install: `sudo apt-get install jq curl bc gawk xxd`). |
+| **Bitcoin Node** | Umbrel: Ensure `bitcoin-knots_bitcoind_1` container runs (`docker ps`). Native: `bitcoind` with `rpcuser`/`rpcpassword` in `~/.bitcoin/bitcoin.conf`. Test: `bitcoin-cli getblockcount`. |
+| **Telegram Bot** (Optional) | Create a bot via [BotFather](https://t.me/BotFather) for `TELEGRAM_BOT_TOKEN`. Get `TELEGRAM_CHAT_ID` by messaging the bot. |
 
-Prerequisites
-System Requirements:
-Linux environment with Bash.
+---
 
-Bitcoin Knots or Bitcoin Core node (Umbrel Docker setup recommended).
+## 🚀 Installation
 
-Docker (for Umbrel users) or native Bitcoin Core installation.
-
-Internet access for external API calls (e.g., mempool.space, blockchain.info).
-
-Dependencies:
-jq: JSON processing.
-
-curl: API requests.
-
-bc: Floating-point calculations.
-
-awk: Text processing.
-
-xxd: Hex-to-ASCII conversion.
-
-Install dependencies (Ubuntu/Debian example):
-
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/<your-username>/block-analysis-tool.git
+   cd block-analysis-tool
