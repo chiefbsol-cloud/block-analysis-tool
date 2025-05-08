@@ -8,6 +8,10 @@ A tool for analysing Bitcoin block propagation delays and miner information. Ove
 
 A Bash-based utility for analyzing **Bitcoin block propagation delays** and extracting **miner information** from coinbase scripts. Tailored for **Bitcoin Knots** on Umbrel (Docker), it supports Bitcoin Core setups and provides detailed CSV/JSON reports, debug logs, and Telegram summaries for real-time monitoring.
 
+This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuring compatibility with lightweight Linux environments.
+
+**Disclaimer**: Use this script at your own risk. The authors assume no liability for any issues arising from its use. Ensure you understand the script’s functionality and test it thoroughly before deployment.
+
 ---
 
 ## ✨ Features
