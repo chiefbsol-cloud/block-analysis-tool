@@ -50,8 +50,10 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
 2. **Create Log Directory**:
  ```bash
 mkdir -p ~/logs/block_delay
-chmod 755 ~/logs/block_delay
+```
 
-3. ** Set Permissions**:
- ```bash
-chmod +x block_delay.sh get_miner.sh
+3. **Set File Permissions to Executable**:
+```bash
+Store block_delay.sh and get_miner.sh in root of Umbrel
+chmod +x block_delay.sh
+chmod +x get_miner.sh
