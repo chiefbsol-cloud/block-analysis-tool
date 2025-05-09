@@ -150,6 +150,6 @@ Add cronjob Overnight (50 blocks, 6 AM):
 0 6 * * * /path/to/block_delay.sh 50
 
 Daily (100 blocks, 10 PM):
-0 22 * * * /path/to/block_delay.sh 100
+0 22 * * * /path/to/block_delay.sh
 ```
 
