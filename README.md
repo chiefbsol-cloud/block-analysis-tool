@@ -149,7 +149,7 @@ crontab -e
 Add cronjob Overnight (50 blocks, 6 AM):
 0 6 * * * /path/to/block_delay.sh 50
 
-Daily (100 blocks, 10 PM):
+Daily (100 blocks, 10 PM *no args = 100 blocks*):
 0 22 * * * /path/to/block_delay.sh
 ```
 
