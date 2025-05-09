@@ -87,7 +87,7 @@ chmod +x block_delay.sh
 chmod +x get_miner.sh
 ```
 
-4. ** Grant Docker Permissions to the Umbrel User**:
+4. **Grant Docker Permissions to the Umbrel User**:
 ```bash
 Solution: Grant Docker Permissions to the umbrel User
 To resolve this, add the umbrel user to the docker group, which allows non-root access to the Docker daemon.
