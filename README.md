@@ -86,7 +86,32 @@ mkdir -p ~/logs/block_delay
 chmod +x block_delay.sh
 chmod +x get_miner.sh
 ```
-4. **Configure Environment**:
+
+4. ** Grant Docker Permissions to the Umbrel User**:
+```bash
+Solution: Grant Docker Permissions to the umbrel User
+To resolve this, add the umbrel user to the docker group, which allows non-root access to the Docker daemon.
+Add umbrel to the docker Group:
+Run the following command to add the umbrel user to the docker group:
+
+sudo usermod -aG docker umbrel
+
+-aG: Appends the docker group to the user’s groups without overwriting existing memberships.
+
+Verify the user is in the docker group:
+
+groups umbrel
+
+You should see docker in the output (e.g., umbrel : umbrel docker).
+
+Apply the Group Change:
+For the group change to take effect, you need to log out and log back in via SSH:
+
+exit
+ssh umbrel@umbrel.local
+```
+
+5. **Configure Environment**:
 ```bash
 Edit block_delay.sh:
 NUM_BLOCKS: Blocks to analyze (default: 5, recommended: 5–100).
@@ -100,7 +125,7 @@ RECYCLE_LOGS_HOURS: Log retention (default: 336 hours).
 For Bitcoin Core Users (Untested), update both files:
 Replace docker exec bitcoin-knots_bitcoind_1 bitcoin-cli with your container name or bitcoin-cli.
 ```
-5. ** Test the Scripts **:
+6. ** Test the Scripts **:
 ```bash
 Test get_miner.sh
 ./get_miner.sh 895802
@@ -118,7 +143,7 @@ Debug.log (text)
 error.log (errors)
 ```
 
-6. ** Run as a Cronjob **:
+7. ** Run as a Cronjob **:
 ```bash
 crontab -e
 Add cronjob Overnight (50 blocks, 6 AM):
