@@ -29,8 +29,8 @@ ERROR_LOG="$LOG_DIR/error.log"
 
 # Configuration
 NUM_BLOCKS=${NUM_BLOCKS:-5}
-TELEGRAM_CHAT_ID="7110505856"
-TELEGRAM_BOT_TOKEN="7382649146:AAFG2_sgR_8dgZW44evOVI3xunt_udvNfIE"
+TELEGRAM_CHAT_ID="Your_CHAT_IT"
+TELEGRAM_BOT_TOKEN="YourBotToken"
 ATTACH_PROPAGATION_LOG="NO"  # Attach Propagation log in CSV format to telegram (YES/NO)
 ATTACH_PROPAGATION_JSON="NO" # Attach Propagation log in JOSON format to telegram (YES/NO
 ATTACH_DEBUG_LOG="NO"        # Attach Debug log to telegram (YES/NO)
