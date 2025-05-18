@@ -18,7 +18,7 @@ This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuri
 
 ## ✨ Features
 
-### Block Propagation Analysis (`block_delay.sh`)
+### Block Propagation Analysis (`block_delayv2.sh`)
 - ⏱ Measures mined-to-header and mined-to-validation delays for a range of Bitcoin blocks.
 - 📄 Outputs:
   - **Propagation.log** (CSV): Block data with timestamps, delays, compact block status, and miner names.
@@ -85,7 +85,7 @@ mkdir -p ~/logs/block_delay
 
 3. **Set File Permissions to Executable**:
 ```bash
-chmod +x block_delay.sh
+chmod +x block_delayv2.sh
 chmod +x get_miner.sh
 ```
 
@@ -115,7 +115,7 @@ ssh umbrel@umbrel.local
 
 5. **Configure Environment**:
 ```bash
-Edit block_delay.sh:
+Edit block_delayv2.sh:
 NUM_BLOCKS: Blocks to analyze (default: 5, recommended: 5–100).
 
 TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID: For notifications.
@@ -136,7 +136,7 @@ Output:
 Miner/contact_info: AntPool
 
 Test block_delay.sh
-./block_delay.sh 5
+./block_delayv2.sh 5
 
 Check ~/logs/block_delay for:
 Propagation.log (CSV)
@@ -149,9 +149,9 @@ error.log (errors)
 ```bash
 crontab -e
 Add cronjob Overnight (50 blocks, 6 AM):
-0 6 * * * /path/to/block_delay.sh 50
+0 6 * * * /path/to/block_delayv2.sh 50
 
 Daily (100 blocks, 10 PM):
-0 22 * * * /path/to/block_delay.sh 100
+0 22 * * * /path/to/block_delayv2.sh 100
 ```
 
