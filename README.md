@@ -10,6 +10,8 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
 
 This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuring compatibility with lightweight Linux environments.
 
+An updated v2 of the script corrects: Average Calculation | Block Delays are now expressed as number of Blocks | Negative times are now excluded from calculations and such blocks are counted.
+
 **Disclaimer**: Use this script at your own risk. The authors assume no liability for any issues arising from its use. Ensure you understand the script’s functionality and test it thoroughly before deployment.
 
 ---
