@@ -12,7 +12,7 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
 
 This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuring compatibility with lightweight Linux environments.
 
-**An updated v2 of the script corrects: Average Calculation | Block Delays are now expressed as number of Blocks | Negative times are now excluded from calculations and such blocks are counted.**
+**An updated v2 & v3 of the script corrects: Average Calculation | Block Delays are now expressed as number of Blocks | Negative times are now excluded from calculations and such blocks are counted.**
 
 **Disclaimer**: Use this script at your own risk. The authors assume no liability for any issues arising from its use. Ensure you understand the script’s functionality and test it thoroughly before deployment.
 
@@ -20,7 +20,7 @@ This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuri
 
 ## ✨ Features
 
-### Block Propagation Analysis (`block_delayv2.sh`)
+### Block Propagation Analysis (`block_delayvx.sh`)
 - ⏱ Measures mined-to-header and mined-to-validation delays for a range of Bitcoin blocks.
 - 📄 Outputs:
   - **Propagation.log** (CSV): Block data with timestamps, delays, compact block status, and miner names.
@@ -30,7 +30,7 @@ This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuri
 - ⏰ Supports cronjob scheduling (e.g., 50 blocks overnight, 100 blocks daily).
 - ♻️ Recycles logs after a configurable period (default: 336 hours).
 
-### Miner Identification (`get_miner.sh`)
+### Miner Identification (`get_minerxx.sh`)
 - 🕵️‍♂️ Extracts miner names from block coinbase scripts using block height.
 - 🏊 Supports major mining pools (e.g., AntPool, Foundry USA Pool, MARA Pool) with manual overrides.
 - 🧹 Cleans and normalizes coinbase data for accuracy.
@@ -132,13 +132,13 @@ Replace docker exec bitcoin-knots_bitcoind_1 bitcoin-cli with your container nam
 6. ** Test the Scripts **:
 ```bash
 Test get_miner.sh
-./get_miner.sh 895802
+./get_minerxx.sh 895802
 
 Output:
 Miner/contact_info: AntPool
 
 Test block_delay.sh
-./block_delayv2.sh 5
+./block_delayvx.sh 5
 
 Check ~/logs/block_delay for:
 Propagation.log (CSV)
@@ -151,9 +151,9 @@ error.log (errors)
 ```bash
 crontab -e
 Add cronjob Overnight (50 blocks, 6 AM):
-0 6 * * * /path/to/block_delayv2.sh 50
+0 6 * * * /path/to/block_delayvx.sh 50
 
 Daily (100 blocks, 10 PM):
-0 22 * * * /path/to/block_delayv2.sh 100
+0 22 * * * /path/to/block_delayvx.sh 100
 ```
 
