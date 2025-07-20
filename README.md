@@ -1,5 +1,7 @@
 # block-analysis-tool
-A tool for analysing Bitcoin block propagation delays and miner information. Overview of findings are sent to Telegram with detailed CSV and JSON available. Not compatible with Bitcoin Knots v28-1.4.
+A tool for analysing Bitcoin block propagation delays and miner information. Overview of findings are sent to Telegram with detailed CSV and JSON available. 
+- block_delayv3.sh and get_minerv3.sh are now compatible with Bitcoin Knots v28-1.4. The v3 is not backwards compatible with previous versions of Bitcoin Knots.
+For previous versions of Bitcoin Knots use block_delayv2.sh and get_miner.sh.
 # Block Analysis Tool 📊
 
 ![GitHub License](https://img.shields.io/github/license/<your-username>/block-analysis-tool?color=blue)
