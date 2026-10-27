@@ -1,6 +1,6 @@
 # block-analysis-tool
 A tool for analysing Bitcoin block propagation delays and miner information. Overview of findings are sent to Telegram with detailed CSV and JSON available. 
-- block_delayv3.sh and get_minerv3.sh are now compatible with Bitcoin Knots v28-1.4. The v3 is not backwards compatible with previous versions of Bitcoin Knots.
+- block_delayv4.sh and get_minerv3.sh are now compatible with Bitcoin Knots v28-1.4. The v4 & 3 are not backwards compatible with previous versions of Bitcoin Knots.
 For previous versions of Bitcoin Knots use block_delayv2.sh and get_miner.sh.
 # Block Analysis Tool 📊
 
@@ -12,7 +12,7 @@ A Bash-based utility for analyzing **Bitcoin block propagation delays** and extr
 
 This script has been tested on a DIY Raspberry Pi 5 (8GB) running Umbrel, ensuring compatibility with lightweight Linux environments.
 
-**An updated v2 & v3 of the script corrects: Average Calculation | Block Delays are now expressed as number of Blocks | Negative times are now excluded from calculations and such blocks are counted.**
+**An updated v2, v3, V4  of the script corrects: Average Calculation | Block Delays are now expressed as number of Blocks | Negative times are now excluded from calculations and such blocks are counted.**
 
 **Disclaimer**: Use this script at your own risk. The authors assume no liability for any issues arising from its use. Ensure you understand the script’s functionality and test it thoroughly before deployment.
 
